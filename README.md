@@ -1,1 +1,1 @@
-# Vanilla JavaScript GitHub Profiles Generator
+# Vanilla JavaScript Github Profiles Generator
