@@ -1,10 +1,18 @@
+//Store the API link in a variable
+
 const APIURL = "https://api.github.com/users/";
+
+//Store the elements from the HTML file
 
 const main = document.getElementById("main");
 const form = document.getElementById("form");
 const search = document.getElementById("search");
 
+//Initially call the function to display my profile as default
+
 getUser("JohnXander")
+
+//Connect to API and pass parameter into main function
 
 async function getUser(user) {
     const resp = await fetch(APIURL + user);
@@ -13,7 +21,10 @@ async function getUser(user) {
     createUserCard(respData)
 }
 
+//Main function (create HTML div using API data):
+
 function createUserCard(user) {
+
     const cardHTML = `
 
         <div class="card">
@@ -40,6 +51,8 @@ function createUserCard(user) {
 
     main.innerHTML = cardHTML;
 }
+
+//Search for user with whichever username is typed into the input
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
